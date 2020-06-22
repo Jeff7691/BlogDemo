@@ -1,0 +1,19 @@
+package com.sincere.demo.Mapper;
+
+import com.sincere.demo.model.User;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.lang.Nullable;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+
+public class UserMapper implements RowMapper {
+
+    @Nullable
+    @Override
+    public Object mapRow(ResultSet resultSet, int i) throws SQLException{
+        User user = new User();
+        user.getUsername(resultSet.getString("username"));
+        user.setPassword(resultSet.getString("password"));
+        return user;
+    }
+}
