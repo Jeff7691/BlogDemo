@@ -1,0 +1,15 @@
+package com.sincere.demo.dao;
+
+import com.sincere.demo.model.User;
+import org.springframework.stereotype.Repository;
+
+import javax.transaction.Transactional;
+
+
+@Repository
+@Transactional
+public interface Userdao {
+    User findUserNameAndPassword(String username);
+
+
+}
